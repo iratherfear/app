@@ -13,8 +13,8 @@ export class GetTodosService {
     return this.todos;
   }
 
-  addTodo(title: string) {
-    const newTodo: Todo = new Todo(this.todos.length + 1, title, false);
+  addTodo(title: string, description: string) {
+    const newTodo: Todo = new Todo(this.todos.length + 1, title, description, false);
     this.todos.push(newTodo);
   }
 }

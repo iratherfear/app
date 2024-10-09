@@ -1,6 +1,8 @@
 <div class="card mt-3 shadow-sm">
     <div class="card-body">
       <h5 class="card-title">{{ todo.title }}</h5>
+      <p class="card-text">{{ todo.description }}</p> <!-- Displaying the description -->
+      
       <p class="card-text">
         Status: 
         <span [ngClass]="{'text-success': todo.isCompleted, 'text-danger': !todo.isCompleted}">
