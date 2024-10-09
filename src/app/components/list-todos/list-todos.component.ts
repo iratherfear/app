@@ -4,11 +4,12 @@ import { Todo } from '../../classes/todo';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { DisplayTodoComponent } from '../display-todo/display-todo.component';
 
 @Component({
   selector: 'app-list-todos',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, DisplayTodoComponent],
   templateUrl: './list-todos.component.html',
   styleUrl: './list-todos.component.css'
 })
@@ -23,6 +24,5 @@ export class ListTodosComponent implements OnInit {
 
   ngOnInit(): void {
     this.todos = this.todoService.getTodos();
-    console.log(this.todos);
   }  
 }

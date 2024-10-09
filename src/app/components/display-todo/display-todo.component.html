@@ -1,1 +1,13 @@
-<p>display-todo works!</p>
+<div class="card mt-3 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">{{ todo.title }}</h5>
+      <p class="card-text">
+        Status: 
+        <span [ngClass]="{'text-success': todo.isCompleted, 'text-danger': !todo.isCompleted}">
+          {{ todo.isCompleted ? 'Completed' : 'Pending' }}
+        </span>
+      </p>
+      <button class="btn btn-outline-primary" (click)="toggleStatus()">Toggle Status</button>
+    </div>
+  </div>
+  
