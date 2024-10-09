@@ -13,20 +13,19 @@ import { Router } from '@angular/router';
 })
 export class AddTodoComponent {
 
-  testString: string = "";
-  descriptionNewtodo: string = "";
-  errorMessage: string = "";
+  titleOfTodo: string = "";
+  descriptionOfTodo: string = "";
   constructor(
     private todoService: GetTodosService,
     private router: Router
   ) {}
 
   addTodoButton() {
-    if(this.testString === "") {
+    if(this.titleOfTodo === "") {
       alert("Title can not be empty");
       return;
     }
-    this.todoService.addTodo(this.testString, this.descriptionNewtodo);
+    this.todoService.addTodo(this.titleOfTodo, this.descriptionOfTodo);
     this.router.navigateByUrl("/");
   }  
 }

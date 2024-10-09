@@ -12,7 +12,7 @@
               type="text"
               class="form-control"
               placeholder="Enter your todo here"
-              [(ngModel)]="testString"
+              [(ngModel)]="titleOfTodo"
               aria-label="Todo input"
               required
             />
@@ -24,7 +24,7 @@
               type="text"
               class="form-control"
               placeholder="Description..."
-              [(ngModel)]="descriptionNewtodo"
+              [(ngModel)]="descriptionOfTodo"
               aria-label="Todo description"
             />
           </div>
@@ -33,7 +33,7 @@
             class="btn btn-primary btn-block"
             type="button"
             (click)="addTodoButton()"
-            [disabled]="!testString"
+            [disabled]="!titleOfTodo"
           >
             <i class="bi bi-plus-circle"></i> ADD
           </button>
