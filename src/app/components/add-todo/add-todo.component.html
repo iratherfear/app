@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2 class="text-center">Add Todo</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input
+          id="framework"
+          type="text"
+          class="form-control"
+          placeholder="Enter your todo here"
+          [(ngModel)]="testString"
+          aria-label="Todo input"
+          aria-describedby="button-addon2"
+          required
+        />
+        <button
+          class="btn btn-primary"
+          type="button"
+          id="button-addon2"
+          (click)="addTodoButton()"
+        >
+          ADD
+        </button>
+      </div>
+      <div *ngIf="!testString" class="text-danger">Please enter a todo item.</div>
+    </div>
+  </div>
+</div>
