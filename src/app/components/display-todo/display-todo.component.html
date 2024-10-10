@@ -1,15 +1,23 @@
 <div class="card mt-3 shadow-sm">
-    <div class="card-body">
-      <h5 class="card-title">{{ todo.title }}</h5>
-      <p class="card-text">{{ todo.description }}</p> <!-- Displaying the description -->
-      
-      <p class="card-text">
-        Status: 
-        <span [ngClass]="{'text-success': todo.isCompleted, 'text-danger': !todo.isCompleted}">
-          {{ todo.isCompleted ? 'Completed' : 'Pending' }}
-        </span>
-      </p>
-      <button class="btn btn-outline-primary" (click)="toggleStatus()">Toggle Status</button>
+  <div class="card-body">
+    <h5 class="card-title">{{ todo.title }}</h5>
+    <p class="card-text">{{ todo.description }}</p> <!-- Displaying the description -->
+
+    <p class="card-text">
+      <strong>Due Date:</strong> {{ formatDate(todo.dueDate) }}
+    </p>
+
+    <div class="d-flex justify-content-between">
+      <!-- Toggle Status Button with Strikethrough and Disabled When Completed -->
+      <button 
+        class="btn btn-outline-primary" 
+        [ngClass]="{'completed-button': todo.isCompleted}" 
+        (click)="toggleStatus()">
+        {{ todo.isCompleted ? 'Completed' : '' }}
+        {{ !todo.isCompleted ? 'Mark as Completed' : '' }}
+      </button>
+
+      <button class="btn btn-outline-danger" (click)="deleteTodo()">Delete</button>
     </div>
   </div>
-  
+</div>

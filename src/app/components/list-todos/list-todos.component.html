@@ -1,9 +1,38 @@
-<div class="container mt-4">
-  <h2 class="text-center">Todo List</h2>
-  <ul class="list-group">
-    <app-display-todo 
-    *ngFor="let todo of todos"
-    [todo]="todo"
-    ></app-display-todo>
-  </ul>
+<div class="container mt-5">
+  <!-- Title Section -->
+  <h2 class="text-center display-4 mb-4">XODOZz List</h2>
+  
+  <!-- Pending Todos Section -->
+  <div class="mb-4">
+    <h3 class="text-center text-primary">Pending...</h3>
+    <div class="row">
+      <ng-container *ngFor="let todo of todos">
+        <div *ngIf="!todo.isCompleted" class="col-md-6 mb-4">
+          <div class="card shadow-sm p-3">
+            <app-display-todo 
+              [todo]="todo" 
+              (todoDeleted)="onTodoDeleted($event)">
+            </app-display-todo>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Completed Todos Section -->
+  <div class="completed-section mt-5">
+    <h3 class="text-center text-success">Completed!!!</h3>
+    <div class="row">
+      <ng-container *ngFor="let todo of todos">
+        <div *ngIf="todo.isCompleted" class="col-md-6 mb-4">
+          <div class="card border-success shadow-sm p-3">
+            <app-display-todo 
+              [todo]="todo" 
+              (todoDeleted)="onTodoDeleted($event)">
+            </app-display-todo>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </div>

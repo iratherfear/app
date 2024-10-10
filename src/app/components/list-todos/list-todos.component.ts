@@ -21,8 +21,15 @@ export class ListTodosComponent implements OnInit {
     private todoService: GetTodosService
   ) {}
 
+  loadTodos() {
+    this.todos = this.todoService.getTodos();
+  }
 
   ngOnInit(): void {
-    this.todos = this.todoService.getTodos();
+    this.loadTodos();
   }  
+
+  onTodoDeleted($event: number) {
+    this.loadTodos();
+  }
 }

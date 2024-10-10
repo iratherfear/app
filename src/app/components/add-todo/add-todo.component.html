@@ -1,10 +1,9 @@
 <div class="container mt-4">
-  <h2 class="text-center mb-4">Add Todo</h2>
+  <h2 class="text-center mb-4">Add XODOZz</h2>
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card shadow-sm">
         <div class="card-body">
-          <h5 class="card-title text-center">Create a New Todo</h5>
           
           <div class="input-group mb-3">
             <input
@@ -26,6 +25,28 @@
               placeholder="Description..."
               [(ngModel)]="descriptionOfTodo"
               aria-label="Todo description"
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <input
+              id="todoDueDate"
+              type="date"
+              class="form-control"
+              [(ngModel)]="dueDateString"
+              aria-label="Due date"
+              required
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <input
+              id="todoDueTime"
+              type="time"
+              class="form-control"
+              [(ngModel)]="dueTimeString"
+              aria-label="Due time"
+              required
             />
           </div>
 
